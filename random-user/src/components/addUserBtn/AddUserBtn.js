@@ -4,9 +4,7 @@ import "./AddUserBtn.css";
 export default function AddUserBtn(props) {
   return (
     <div>
-      <button className="button" onClick={props.saveNewUser}>
-        ADD USER
-      </button>
+      <button className="button">ADD USER</button>
     </div>
   );
 }

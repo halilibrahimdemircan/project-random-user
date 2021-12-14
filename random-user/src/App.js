@@ -13,6 +13,7 @@ import padlock from "./icons/padlock.png";
 import street from "./icons/street-view.png";
 import NewUserBtn from "./components/newUserBtn/NewUserBtn";
 import AddUserBtn from "./components/addUserBtn/AddUserBtn";
+import AddUser from "./components/addUser/AddUser";
 
 function App() {
   const [newUser, setNewUser] = useState({
@@ -60,6 +61,14 @@ function App() {
     getName();
   };
 
+  // const [addedUser, setAddedUser] = useState([]);
+  // const addUser = () => {
+  //   let { name, email, phone, age } = newUser;
+  //   // console.log(name, email, phone, age);
+  //   setAddedUser(addedUser.push(...addedUser, { name, email, phone, age }));
+  //   console.log(addedUser);
+  // };
+
   useEffect(() => {
     const data = axios
       .get("https://randomuser.me/api")
@@ -104,7 +113,8 @@ function App() {
       <div className="buttons">
         <NewUserBtn getNewUser={getNewUser} />
         <br />
-        <AddUserBtn saveNewUser={saveNewUser} />
+        <AddUserBtn />
+        <AddUser />
       </div>
       <div className="list">
         <table>
