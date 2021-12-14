@@ -42,5 +42,8 @@
   height: 2rem;
   margin: 1rem;
   border-radius: 50%;
-  box-shadow: 4px 4px 7px 4px rgb(49, 44, 44);
+  box-shadow: 4px 4px 7px 5px rgb(49, 44, 44);
+}
+.buttons {
+  display: inline-block;
 }
