@@ -36,6 +36,11 @@
     transform: rotate(360deg);
   }
 }
-.icons {
+.icons img {
   display: inline;
+  width: 2rem;
+  height: 2rem;
+  margin: 1rem;
+  border-radius: 50%;
+  box-shadow: 4px 4px 7px 4px rgb(49, 44, 44);
 }

@@ -4,6 +4,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import TextArea from "./components/textArea/TextArea";
 import LogoButton from "./components/logoButton/LogoButton";
+import businesswoman from "./icons/businesswoman.png";
+import boss from "./icons/boss.png";
+import call from "./icons/call.png";
+import growing from "./icons/growing-up.png";
+import mail from "./icons/mail.png";
+import padlock from "./icons/padlock.png";
+import street from "./icons/street-view.png";
 
 function App() {
   const [newUser, setNewUser] = useState({
@@ -43,7 +50,12 @@ function App() {
       </div>
 
       <div className="icons">
-        <img src="" alt="" />
+        <img src={businesswoman} alt="" />
+        <img src={mail} alt="" />
+        <img src={growing} alt="" />
+        <img src={street} alt="" />
+        <img src={call} alt="" />
+        <img src={padlock} alt="" />
       </div>
     </div>
   );
