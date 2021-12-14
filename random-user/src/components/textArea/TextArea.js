@@ -3,7 +3,7 @@ import React from "react";
 export default function TextArea(props) {
   return (
     <div>
-      <p></p>
+      <p>Veriler Burada Gözükecek</p>
     </div>
   );
 }

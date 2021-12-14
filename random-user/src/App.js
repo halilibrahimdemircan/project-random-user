@@ -43,12 +43,7 @@ function App() {
       </div>
 
       <div className="icons">
-        <LogoButton />
-        <LogoButton />
-        <LogoButton />
-        <LogoButton />
-        <LogoButton />
-        <LogoButton />
+        <img src="" alt="" />
       </div>
     </div>
   );
