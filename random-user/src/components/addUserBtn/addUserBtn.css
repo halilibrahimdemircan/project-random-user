@@ -1,5 +1,6 @@
 .button {
   display: inline-block;
   width: 8rem;
-  height: 4rem;
+  height: 2rem;
+  margin: 2rem;
 }

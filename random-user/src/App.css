@@ -43,6 +43,11 @@
   margin: 1rem;
   border-radius: 50%;
   box-shadow: 4px 4px 7px 5px rgb(49, 44, 44);
+  transition: transform 0.2s;
+}
+.icons img:hover {
+  transform: scale(1.5);
+  cursor: pointer;
 }
 .buttons {
   display: inline-block;

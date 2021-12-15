@@ -1,8 +1,12 @@
 .button {
   display: inline-block;
+  background-color: orange;
+  border-radius: 2rem;
 }
+
 .buttondiv {
   display: inline-block;
   width: 8rem;
   height: 3rem;
+  margin: 3rem;
 }
