@@ -1,3 +1,7 @@
 div img {
   display: inline-block;
 }
+div img :hover {
+  scale: 0.9;
+  width: 20px;
+}

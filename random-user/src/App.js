@@ -1,9 +1,8 @@
 import "./App.css";
 import Image from "./components/image/Image";
 import axios from "axios";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import TextArea from "./components/textArea/TextArea";
-import LogoButton from "./components/logoButton/LogoButton";
 import businesswoman from "./icons/businesswoman.png";
 import boss from "./icons/boss.png";
 import call from "./icons/call.png";
@@ -27,6 +26,7 @@ function App() {
   });
   const [dataType, setDataType] = useState("My name is");
   const [dataType2, setDataType2] = useState("");
+  const [userList, setUserList] = useState([]);
 
   const getName = () => {
     setDataType("My name is");
@@ -68,6 +68,20 @@ function App() {
   //   setAddedUser(addedUser.push(...addedUser, { name, email, phone, age }));
   //   console.log(addedUser);
   // };
+  const addUser = () => {
+    // console.log("func içi");
+    if (userList.filter((el) => el.email === newUser.email).length === 0) {
+      setUserList((oldArray) => [
+        ...oldArray,
+        {
+          firstName: `${newUser.name.first}`,
+          email: `${newUser.email}`,
+          phone: `${newUser.phone}`,
+          age: `${newUser.age}`,
+        },
+      ]);
+    }
+  };
 
   useEffect(() => {
     const data = axios
@@ -81,6 +95,7 @@ function App() {
           street: res.data.results[0].location.street.name,
           phone: res.data.results[0].phone,
           password: res.data.results[0].login.password,
+          gender: res.data.results[0].gender,
         });
         setDataType2(
           res.data.results[0].name.title +
@@ -103,7 +118,11 @@ function App() {
       </div>
 
       <div className="icons">
-        <img src={businesswoman} alt="" onClick={getName} />
+        <img
+          src={newUser.gender == "male" ? boss : businesswoman}
+          alt=""
+          onClick={getName}
+        />
         <img src={mail} alt="" onClick={getMail} />
         <img src={growing} alt="" onClick={getAge} />
         <img src={street} alt="" onClick={getStreet} />
@@ -112,20 +131,9 @@ function App() {
       </div>
       <div className="buttons">
         <NewUserBtn getNewUser={getNewUser} />
-        <br />
-        <AddUserBtn />
-        <AddUser />
-      </div>
-      <div className="list">
-        <table>
-          <tr>
-            <th>First Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Age</th>
-          </tr>
-          <tr></tr>
-        </table>
+
+        <AddUserBtn addUser={addUser} />
+        <AddUser userList={userList} />
       </div>
     </div>
   );

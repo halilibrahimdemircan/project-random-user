@@ -3,8 +3,10 @@ import "./AddUserBtn.css";
 
 export default function AddUserBtn(props) {
   return (
-    <div>
-      <button className="button">ADD USER</button>
+    <div className="buttondiv">
+      <button className="button" onClick={props.addUser}>
+        ADD USER
+      </button>
     </div>
   );
 }
